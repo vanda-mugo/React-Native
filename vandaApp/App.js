@@ -1,15 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View ,ScrollView} from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <ScrollView vertical={true}>
       <View style={styles.header} />
       <View style={styles.header} />
       <View style={styles.header} />
       <View style={styles.header} />
-      <StatusBar style="auto" />
+      <View style={styles.header} />
+      <View style={styles.header} />
+      <View >  
+      <ScrollView horizontal={true}>    
+      <View style={styles.horizontal} />
+      <View style={styles.horizontal} />
+      <View style={styles.horizontal} />
+      <View style={styles.horizontal} />
+      <View style={styles.horizontal} />
+      <View style={styles.horizontal} />
+      <View style={styles.horizontal} />
+      </ScrollView>
+      </View>
+      <View style={styles.header} />
+      <View style={styles.header} />
+      <View style={styles.header} />
 
+      <StatusBar style="auto" />
+      </ScrollView>
     </View>
   );
 }
@@ -24,8 +43,17 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: 'green',
+    height: 200,
+    width: '65%',
+    margin:10,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  horizontal: {
+    backgroundColor: 'cyan',
     height: 150,
-    width: 400,
+    width:wp('30%'),
     margin:10,
     borderRadius: 10,
   },
